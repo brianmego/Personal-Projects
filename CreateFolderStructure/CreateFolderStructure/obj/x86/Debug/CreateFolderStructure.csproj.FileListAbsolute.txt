@@ -1,0 +1,6 @@
+C:\Users\Brian\documents\visual studio 2010\Projects\CreateFolderStructure\CreateFolderStructure\bin\Debug\CreateFolderStructure.exe
+C:\Users\Brian\documents\visual studio 2010\Projects\CreateFolderStructure\CreateFolderStructure\bin\Debug\CreateFolderStructure.pdb
+C:\Users\Brian\documents\visual studio 2010\Projects\CreateFolderStructure\CreateFolderStructure\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian\documents\visual studio 2010\Projects\CreateFolderStructure\CreateFolderStructure\obj\x86\Debug\CreateFolderStructure.exe
+C:\Users\Brian\documents\visual studio 2010\Projects\CreateFolderStructure\CreateFolderStructure\obj\x86\Debug\CreateFolderStructure.pdb
+C:\Users\Brian\documents\visual studio 2010\Projects\CreateFolderStructure\CreateFolderStructure\bin\Debug\Live Schools.txt

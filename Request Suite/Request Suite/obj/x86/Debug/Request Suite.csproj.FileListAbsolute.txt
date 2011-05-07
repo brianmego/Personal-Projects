@@ -1,0 +1,13 @@
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\bin\Debug\Request Suite.exe
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\bin\Debug\Request Suite.pdb
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\MainWindow.baml
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\App.g.cs
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\Request Suite_MarkupCompile.cache
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\Request Suite.g.resources
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\WpfApplication1.Properties.Resources.resources
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\Request Suite.exe
+C:\Users\Brian\documents\visual studio 2010\Projects\Request Suite\Request Suite\obj\x86\Debug\Request Suite.pdb
