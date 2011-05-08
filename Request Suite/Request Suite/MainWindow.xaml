@@ -5,14 +5,14 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="396*" />
-            <ColumnDefinition Width="107*" />
+            <ColumnDefinition Width="107" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="43*" />
+            <RowDefinition Height="43" />
             <RowDefinition Height="268*" />
         </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Stretch" Margin="10,10,10,0" Name="txtNames" VerticalAlignment="Top" TextChanged="txtNames_TextChanged" PreviewKeyDown="txtNames_PreviewKeyDown"/>
-        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="10" Click="Button_Click" Name="btnGenerate">Generate</Button>
+        <TextBox HorizontalAlignment="Stretch" Margin="10,10,10,0" Name="txtNames" VerticalAlignment="Top" PreviewKeyDown="txtNames_PreviewKeyDown" PreviewKeyUp="txtNames_PreviewKeyUp" />
+        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="10" Name="btnGenerate" Click="btnGenerate_Click" IsDefault="True">Generate</Button>
         <TextBox Grid.Row="1" Height="Auto" HorizontalAlignment="Stretch" Margin="10" Name="txtGenerated" VerticalAlignment="Stretch" Width="Auto" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2" />
     </Grid>
 </Window>
