@@ -1,18 +1,33 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="396*" />
-            <ColumnDefinition Width="107" />
+            <ColumnDefinition MinWidth="58" />
+            <ColumnDefinition MinWidth="338" />
+            <ColumnDefinition MinWidth="107" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="43" />
-            <RowDefinition Height="268*" />
+            <RowDefinition MinHeight="43" />
+            <RowDefinition MinHeight="40" />
+            <RowDefinition MinHeight="40" />
+            <RowDefinition MinHeight="250" />
         </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Stretch" Margin="10,10,10,0" Name="txtNames" VerticalAlignment="Top" PreviewKeyDown="txtNames_PreviewKeyDown" PreviewKeyUp="txtNames_PreviewKeyUp" />
-        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="10" Name="btnGenerate" Click="btnGenerate_Click" IsDefault="True">Generate</Button>
-        <TextBox Grid.Row="1" Height="Auto" HorizontalAlignment="Stretch" Margin="10" Name="txtGenerated" VerticalAlignment="Stretch" Width="Auto" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2" />
+
+        <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right">School</Label>        
+        <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right">Email</Label>
+        <Label Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right">Subject</Label>
+
+        <Button Grid.Row="0" Grid.Column="2" Margin="10" Name="btnGenerate" Click="btnGenerate_Click" IsDefault="True">Generate</Button>
+        <Button Grid.Row="2" Grid.Column="2" Margin="10" Name="btnSend" Click="btnSend_Click" >Send</Button>
+        
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" 
+                 HorizontalAlignment="Stretch" Margin="10" Name="txtNames" VerticalAlignment="Top" 
+                 PreviewKeyDown="txtNames_PreviewKeyDown" PreviewKeyUp="txtNames_PreviewKeyUp"/>
+        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" Name="txtEmail" VerticalAlignment="Stretch" />
+        <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" Name="txtSubject" VerticalAlignment="Stretch" />
+        <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" 
+                 HorizontalAlignment="Stretch" Margin="10" Name="txtGenerated" VerticalAlignment="Stretch" />
     </Grid>
 </Window>

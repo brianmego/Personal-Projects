@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using RC.Gmail;
 
 namespace WpfApplication1
 {
@@ -13,6 +14,9 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string gmailUserName;
+        public string gmailUserPassword;
+
         int choiceIndex;
         KeyValuePair<string,string> selectedItem = new KeyValuePair<string,string>();
         Dictionary<string, string> totalFolderList = new Dictionary<string,string>();
@@ -178,6 +182,8 @@ namespace WpfApplication1
             return partsToUpdate;
         }
 
+
+
         #region Event Handlers
         private void btnGenerate_Click(object sender, RoutedEventArgs e)
         {
@@ -208,6 +214,16 @@ namespace WpfApplication1
                     cycleThroughFilter("down");
                 }
             }
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            if (gmailUserName == null || gmailUserPassword == null)
+            {
+                UserCredentials uc = new UserCredentials(this);
+            }
+
+
         }
         #endregion
     }
