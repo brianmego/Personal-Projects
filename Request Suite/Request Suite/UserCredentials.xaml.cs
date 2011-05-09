@@ -24,6 +24,7 @@ namespace WpfApplication1
             parent = parentWindow;
             InitializeComponent();
             Show();
+            txtUserName.Focus();
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)

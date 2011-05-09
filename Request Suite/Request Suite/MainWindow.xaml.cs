@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
-using RC.Gmail;
+using System.Net.Mail;
 
 namespace WpfApplication1
 {
@@ -134,30 +134,35 @@ namespace WpfApplication1
 
         private void generateLetter()
         {
-            DirectoryInfo di = new DirectoryInfo(selectedItem.Key);
+            if (selectedItem.Key != null)
+            {
+                DirectoryInfo di = new DirectoryInfo(selectedItem.Key);
 
-            Dictionary<string, string> partsOfLetter = new Dictionary<string, string>(7) { 
-                { "Signature", null }, 
-                { "Attachment", null }, 
-                { "Postscript", null }, 
-                { "Close", null }, 
-                { "Body", null }, 
-                { "Greeting", null }, 
-                { "Heading", null } 
-            };
+                Dictionary<string, string> partsOfLetter = new Dictionary<string, string>(8) { 
+                    { "Subject", null},
+                    { "Signature", null }, 
+                    { "Attachment", null }, 
+                    { "Postscript", null }, 
+                    { "Close", null }, 
+                    { "Body", null }, 
+                    { "Greeting", null }, 
+                    { "Heading", null } 
+                };
 
-            //Use School overrides first
-            partsOfLetter = findLetterComponents(partsOfLetter, di.FullName);
+                //Use School overrides first
+                partsOfLetter = findLetterComponents(partsOfLetter, di.FullName);
 
-            //Use State overrides next
-            partsOfLetter = findLetterComponents(partsOfLetter, di.Parent.FullName);
+                //Use State overrides next
+                partsOfLetter = findLetterComponents(partsOfLetter, di.Parent.FullName);
 
-            //Use defaults otherwise
-            partsOfLetter = findLetterComponents(partsOfLetter, di.Parent.Parent.FullName);
+                //Use defaults otherwise
+                partsOfLetter = findLetterComponents(partsOfLetter, di.Parent.Parent.FullName);
 
-            txtGenerated.Text = (partsOfLetter["Signature"] + partsOfLetter["Attachment"] +
-                partsOfLetter["Postscript"] + partsOfLetter["Close"] + partsOfLetter["Body"] +
-                partsOfLetter["Greeting"] + partsOfLetter["Heading"]);
+                txtSubject.Text = (partsOfLetter["Subject"]).Trim();
+                txtGenerated.Text = (partsOfLetter["Signature"] + partsOfLetter["Attachment"] +
+                    partsOfLetter["Postscript"] + partsOfLetter["Close"] + partsOfLetter["Body"] +
+                    partsOfLetter["Greeting"] + partsOfLetter["Heading"]);
+            }
         }
 
         /// <summary>
@@ -221,9 +226,28 @@ namespace WpfApplication1
             if (gmailUserName == null || gmailUserPassword == null)
             {
                 UserCredentials uc = new UserCredentials(this);
+                return;
             }
 
+            if (gmailUserName != null && gmailUserPassword != null)
+            {
+                MailMessage mail = new MailMessage();
+                System.Net.NetworkCredential cred = new System.Net.NetworkCredential(gmailUserName, gmailUserPassword);
 
+                mail.From = new MailAddress(gmailUserName, "MyEdu");
+                mail.To.Add(txtEmail.Text);
+                mail.Subject = txtSubject.Text;
+                mail.Body = txtGenerated.Text;
+                
+                var smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.EnableSsl = true;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = cred;
+                smtp.Send(mail);
+
+                MessageBox.Show("Message Sent");
+            }
         }
         #endregion
     }
