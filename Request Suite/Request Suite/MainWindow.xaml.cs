@@ -37,7 +37,7 @@ namespace WpfApplication1
         private void buildRepoFolderList()
         {
             List<string> results = new List<string>();
-            string[] statesFolders = Directory.GetDirectories(@"C:\Users\Brian\Documents\Current Projects\Schools");
+            string[] statesFolders = Directory.GetDirectories(@"C:\Users\ron.tatum\Documents\Current Projects\Schools");
             foreach (string state in statesFolders)
             {
                 string[] schoolFolders = Directory.GetDirectories(state);
@@ -159,9 +159,9 @@ namespace WpfApplication1
                 partsOfLetter = findLetterComponents(partsOfLetter, di.Parent.Parent.FullName);
 
                 txtSubject.Text = (partsOfLetter["Subject"]).Trim();
-                txtGenerated.Text = (partsOfLetter["Signature"] + partsOfLetter["Attachment"] +
-                    partsOfLetter["Postscript"] + partsOfLetter["Close"] + partsOfLetter["Body"] +
-                    partsOfLetter["Greeting"] + partsOfLetter["Heading"]);
+                txtGenerated.Text = (partsOfLetter["Heading"] + partsOfLetter["Greeting"] +
+                    partsOfLetter["Body"] + partsOfLetter["Close"] + partsOfLetter["Signature"] +
+                    partsOfLetter["Postscript"] + partsOfLetter["Attachment"]);
             }
         }
 
@@ -250,5 +250,10 @@ namespace WpfApplication1
             }
         }
         #endregion
+
+        private void txtNames_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
