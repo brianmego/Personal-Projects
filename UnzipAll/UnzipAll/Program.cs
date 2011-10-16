@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Diagnostics;
 
 namespace UnzipAll
 {
     class Program
     {
-        static string dirpath = @"C:\Users\Brian\Repos\myeduScripts\scripts\local\schedule_importer\docs";
-
         static void Main(string[] args)
         {
-            DirectoryInfo di = new DirectoryInfo(dirpath);
-            foreach (FileInfo fi in di.GetFiles("*.zip"))
+            if (args.Length == 1)
             {
-                Decompress(fi, dirpath);
+                var dirpath = args[0];
+                //var dirpath = @"C:\Users\Brian\Documents\Current Projects\ScheduleData";
+                DirectoryInfo di = new DirectoryInfo(dirpath);
+                foreach (FileInfo fi in di.GetFiles("*.zip"))
+                {
+                    Decompress(fi, dirpath);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Need a filepath full of zip files");
             }
         }
 
@@ -44,7 +52,17 @@ namespace UnzipAll
 
         public static void Decompress(FileInfo fi, string dirpath)
         {
-            Shell("cmd", " /B /c unzip \"" + fi.FullName + "\" -d " + dirpath + @"\unzipped\", true);
+            var proc = new Process();
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.FileName = "unzip";
+            proc.StartInfo.Arguments = "-o " + "\"" + fi.FullName + "\"" + " -d " + "\"" + fi.DirectoryName + "\\unzipped" + "\"";
+            proc.Start();
+            string output = proc.StandardOutput.ReadToEnd();
+            Console.WriteLine(output);
+            //Process.Start(new ProcessStartInfo("unzip", fi.FullName + " -d unzipped"));
+
+            //Shell("cmd", " /B /c unzip \"" + fi.FullName + "\" -d " + dirpath + @"\unzipped\", true);
         }
     }
 }
