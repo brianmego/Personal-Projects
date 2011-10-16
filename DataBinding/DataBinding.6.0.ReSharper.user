@@ -1,0 +1,53 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="880" fromTop="20" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml" caret="261" fromTop="4" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="0" fromTop="0" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="2751" fromTop="30" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="2168" fromTop="10" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="601" fromTop="9" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="679" fromTop="13" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml.cs" caret="880" fromTop="20" />
+      <File id="D6C78FE1-C6B8-48D5-ACBD-6ABC7A88C5B8/f:MainWindow.xaml" caret="261" fromTop="4" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="public" priority="62" />
+      <Item value="class" priority="30" />
+      <Item value="School`0" priority="31" />
+      <Item value="new" priority="31" />
+      <Item value="School" priority="28" />
+      <Item value="school" priority="63" />
+      <Item value="label1" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DataBinding.School">
+      <Item value="SchoolId" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.Label">
+      <Item value="Content" priority="26" />
+      <Item value="DataContext" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>
